@@ -1,0 +1,14 @@
+@media (min-width: 480px) {
+    .container{
+        max-width: 960px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+@media (min-width: 960px) {
+    .container{
+        max-width: 1920px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}

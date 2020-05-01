@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { UserRegisterComponent } from './user-register.component';
+import { PaginationComponent } from './pagination.component';
 
-describe('UserRegisterComponent', () => {
-  let component: UserRegisterComponent;
-  let fixture: ComponentFixture<UserRegisterComponent>;
+describe('PaginationComponent', () => {
+  let component: PaginationComponent;
+  let fixture: ComponentFixture<PaginationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserRegisterComponent ]
+      declarations: [ PaginationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserRegisterComponent);
+    fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
