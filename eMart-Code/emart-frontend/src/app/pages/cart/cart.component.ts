@@ -1,12 +1,12 @@
-import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
-import {CartService} from '../../services/cart.service';
-import {Subject, Subscription} from 'rxjs';
-import {UserService} from '../../services/user.service';
-import {JwtResponse} from '../../response/JwtResponse';
-import {ProductInOrder} from '../../models/ProductInOrder';
-import {debounceTime, switchMap} from 'rxjs/operators';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Role} from '../../enum/Role';
+import { AfterContentChecked, Component, OnDestroy, OnInit } from '@angular/core';
+import { CartService } from '../../services/cart.service';
+import { Subject, Subscription } from 'rxjs';
+import { UserService } from '../../services/user.service';
+import { JwtResponse } from '../../response/JwtResponse';
+import { ProductInOrder } from '../../models/ProductInOrder';
+import { debounceTime, switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Role } from '../../enum/Role';
 
 @Component({
     selector: 'app-cart',
@@ -16,8 +16,8 @@ import {Role} from '../../enum/Role';
 export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
     constructor(private cartService: CartService,
-                private userService: UserService,
-                private router: Router) {
+        private userService: UserService,
+        private router: Router) {
         this.userSubscription = this.userService.currentUser.subscribe(user => this.currentUser = user);
     }
 
@@ -45,18 +45,11 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
         });
 
         this.sub = this.updateTerms.pipe(
-            // wait 300ms after each keystroke before considering the term
             debounceTime(300),
-            //
-            // ignore new term if same as previous term
-            // Same Object Reference, not working here
-            //  distinctUntilChanged((p: ProductInOrder, q: ProductInOrder) => p.count === q.count),
-            //
-            // switch to new search observable each time the term changes
             switchMap((productInOrder: ProductInOrder) => this.cartService.update(productInOrder))
         ).subscribe(prod => {
-                if (prod) { throw new Error(); }
-            },
+            if (prod) { throw new Error(); }
+        },
             _ => console.log('Update Item Failed'));
     }
 
@@ -93,7 +86,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     remove(productInOrder: ProductInOrder) {
         this.cartService.remove(productInOrder).subscribe(
             success => {
-               this.productInOrders = this.productInOrders.filter(e => e.productId !== productInOrder.productId);
+                this.productInOrders = this.productInOrders.filter(e => e.productId !== productInOrder.productId);
                 console.log('Cart: ' + this.productInOrders);
             },
             _ => console.log('Remove Cart Failed'));
@@ -101,7 +94,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
     checkout() {
         if (!this.currentUser) {
-            this.router.navigate(['/login'], {queryParams: {returnUrl: this.router.url}});
+            this.router.navigate(['/login'], { queryParams: { returnUrl: this.router.url } });
         } else if (this.currentUser.role !== Role.Customer) {
             this.router.navigate(['/seller']);
         } else {

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
-import {OrderService} from "../../services/order.service";
-import {Order} from "../../models/Order";
-import {ActivatedRoute} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { OrderService } from "../../services/order.service";
+import { Order } from "../../models/Order";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-order-detail',
@@ -12,7 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 export class OrderDetailComponent implements OnInit {
 
     constructor(private orderService: OrderService,
-                private route: ActivatedRoute) {
+        private route: ActivatedRoute) {
     }
 
     order$: Observable<Order>;

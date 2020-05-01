@@ -1,13 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {OrderService} from "../../services/order.service";
-import {Order} from "../../models/Order";
-import {OrderStatus} from "../../enum/OrderStatus";
-import {UserService} from "../../services/user.service";
-import {JwtResponse} from "../../response/JwtResponse";
-import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
-import {Role} from "../../enum/Role";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { OrderService } from "../../services/order.service";
+import { Order } from "../../models/Order";
+import { OrderStatus } from "../../enum/OrderStatus";
+import { UserService } from "../../services/user.service";
+import { JwtResponse } from "../../response/JwtResponse";
+import { Subscription } from "rxjs";
+import { ActivatedRoute } from "@angular/router";
+import { Role } from "../../enum/Role";
 
 @Component({
     selector: 'app-order',
@@ -21,9 +21,9 @@ export class OrderComponent implements OnInit, OnDestroy {
     currentUser: JwtResponse;
     Role = Role;
     constructor(private httpClient: HttpClient,
-                private orderService: OrderService,
-                private userService: UserService,
-                private route: ActivatedRoute
+        private orderService: OrderService,
+        private userService: UserService,
+        private route: ActivatedRoute
     ) {
     }
 

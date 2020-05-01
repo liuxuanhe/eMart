@@ -17,14 +17,8 @@
 
             <label class="card-text">
               <strong>Quantity: </strong>
-              <input [(ngModel)]=count
-                     (change)="validateCount()"
-                     type="number"
-                     name="count"
-                     required
-                     min="1"
-                     [max]=productInfo?.productStock
-              >
+              <input [(ngModel)]=count (change)="validateCount()" type="number" name="count" required min="1"
+                [max]=productInfo?.productStock>
             </label>
 
 
@@ -33,8 +27,7 @@
             </p>
           </div>
           <button type="submit" [disabled]="!form.form.valid" *ngIf="productInfo?.productStatus == 0; else offBlock"
-                  class="btn btn-primary btn-lg"
-          >Add to Cart
+            class="btn btn-primary btn-lg">Add to Cart
           </button>
           <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>
         </form>
