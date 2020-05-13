@@ -1,0 +1,20 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: emart-service-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/eMart
+    username: root
+    password: 123456
+  jpa:
+    database: MYSQL
+    show-sql: true
+    open-in-view: true
+
+encrypt:
+  clientId: 069bgju9ku008o743tuyt5v2r3ee2wq8
+  base64Secret: QpptmwrmemricotwqrgjuyyN2I0ZjY=
+  name: restapiuser
+  expiresSecond: 172800
