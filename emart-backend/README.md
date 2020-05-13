@@ -1,7 +1,7 @@
 # eMart
 
 ## FrontEnd ：Angular 9；
-##  Mid Tier：SpringCloud；
+## Mid Tier：SpringCloud；
 
 ## Environment
 - node-10
@@ -24,10 +24,12 @@ Mid Tier Source code of all Microservices
     8002    emart-seller-service
 
 Use Post Man tool to test each End Point of all Microservices
+```
+
 ## Deploy
 
-```
 FrontEnd :
+
 ```
 npm install
 cd emart-frontend
@@ -36,8 +38,10 @@ npm start
 ```
 
 URL :
-
+```
     http://localhost:4200/
-
+```
 Local :
+```
     docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql/mysql:5.7.19
+```
