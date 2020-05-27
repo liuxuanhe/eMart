@@ -140,5 +140,7 @@
 		<module>emart-buyer-service</module>
 		<module>emart-seller-service</module>
 		<module>emart-service</module>
+		<module>emart-eureka-server</module>
+		<module>emart-zuul-service</module>
 	</modules>
 </project>
