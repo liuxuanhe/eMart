@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    environment {
+		dockerImage = ''
+    }
+    stages {
+    	stage('CheckOut Code'){
+         	steps{
+            	checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/liuxuanhe/eMart.git']]])
+            }
+        }
+        stage('Maven Build'){
+        	steps{
+        	    bat 'mvn clean package -DskipTests'
+        	}
+        }
+        stage('Image Build'){
+        	steps{
+        	    bat 'mvn dockerfile:build'
+        	}
+        }
+        stage('Image Push'){
+        	steps{
+        	    bat 'docker push liuxuanhe/emart-buyer-service:latest'
+        	    bat 'docker push liuxuanhe/emart-eureka-server:latest'
+        	    bat 'docker push liuxuanhe/emart-seller-service:latest'
+        	    bat 'docker push liuxuanhe/emart-service:latest'
+        	    bat 'docker push liuxuanhe/emart-zuul-service:latest'
+        	}
+        }
+        stage('Remove Image'){
+        	steps{
+        	    bat 'docker rmi liuxuanhe/emart-buyer-service'
+        	    bat 'docker rmi liuxuanhe/emart-eureka-server'
+        	    bat 'docker rmi liuxuanhe/emart-seller-service'
+        	    bat 'docker rmi liuxuanhe/emart-service'
+        	    bat 'docker rmi liuxuanhe/emart-zuul-service'
+        	    bat 'docker image prune -f'
+        	}
+        }
+    }
+}
