@@ -2,6 +2,13 @@
 
 ## FrontEnd ：Angular 9；
 ## Mid Tier：SpringCloud；
+- Eureka
+- Zuul
+- Feign
+- OAuth2
+- Security
+- Config
+
 
 ## Environment
 - node-10
@@ -38,6 +45,10 @@ cd emart-frontend
 npm install
 npm start
 ```
+
+Jenkinsfile:
+
+    emart-backend/Jenkinsfile
 
 URL :
 ```
