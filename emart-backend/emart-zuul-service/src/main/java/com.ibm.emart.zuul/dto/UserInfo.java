@@ -1,15 +1,7 @@
 package com.ibm.emart.zuul.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import lombok.Data;
-
-@Data
-@Entity
 public class UserInfo {
 
-  @Id
   private int id;
   private String userName;
   private String password;

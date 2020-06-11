@@ -1,6 +1,8 @@
 spring:
   application:
     name: emart-zuul-service
+  cloud:
+    config: false
 server:
   port: 9002
 
