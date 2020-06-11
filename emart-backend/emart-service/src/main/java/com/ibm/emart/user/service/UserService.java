@@ -5,8 +5,8 @@ import com.ibm.emart.user.entity.Seller;
 
 public interface UserService {
 
-  void findBuyer(String userName, String password);
-  void findSeller(String userName, String password);
+  void findBuyer(String userName, String password) throws Exception;
+  void findSeller(String userName, String password) throws Exception;
   void saveBuyer(Buyer buyer);
   void saveSeller(Seller seller);
 

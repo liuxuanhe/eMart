@@ -12,53 +12,53 @@ import lombok.NonNull;
 
 @Service
 public class UserServiceImpl implements UserService {
-	
-	@Autowired
-	private BuyerDao buyerDao;
-	
-	@Autowired
-	private SellerDao sellerDao;
 
-	@Override
-	public void findBuyer(@NonNull String userName, @NonNull String password) throws Exception {
-		
-		try {
-			Buyer buyer = buyerDao.findByUserNameAndPassword(userName);
-			if(buyer != null) {
-				if (!password.equals(buyer.getPassword())) {
-					throw new Exception();
-				}
-			}
-		} catch (Exception e) {
-			throw new Exception();
-		}
-		
-	}
+  @Autowired
+  private BuyerDao buyerDao;
 
-	@Override
-	public void findSeller(@NonNull String userName, @NonNull String password) throws Exception {
-		
-		try {
-			Seller seller = sellerDao.findByUserNameAndPassword(userName);
-			if(seller != null) {
-				if (!password.equals(seller.getPassword())) {
-					throw new Exception();
-				}
-			}
-		} catch (Exception e) {
-			throw new Exception();
-		}
-		
-	}
+  @Autowired
+  private SellerDao sellerDao;
 
-	@Override
-	public void saveBuyer(Buyer buyer) throws Exception {
-		buyerDao.save(buyer);
-	}
+  @Override
+  public void findBuyer(@NonNull String userName, @NonNull String password) throws Exception {
 
-	@Override
-	public void saveSeller(Seller seller) throws Exception {
-		sellerDao.save(seller);
-	}
+    try {
+      Buyer buyer = buyerDao.findByUserNameAndPassword(userName);
+      if (buyer != null) {
+        if (!password.equals(buyer.getPassword())) {
+          throw new Exception();
+        }
+      }
+    } catch (Exception e) {
+      throw new Exception();
+    }
+
+  }
+
+  @Override
+  public void findSeller(@NonNull String userName, @NonNull String password) throws Exception {
+
+    try {
+      Seller seller = sellerDao.findByUserNameAndPassword(userName);
+      if (seller != null) {
+        if (!password.equals(seller.getPassword())) {
+          throw new Exception();
+        }
+      }
+    } catch (Exception e) {
+      throw new Exception();
+    }
+
+  }
+
+  @Override
+  public void saveBuyer(Buyer buyer) {
+    buyerDao.save(buyer);
+  }
+
+  @Override
+  public void saveSeller(Seller seller) {
+    sellerDao.save(seller);
+  }
 
 }
