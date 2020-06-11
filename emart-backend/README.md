@@ -29,8 +29,9 @@ Mid Tier Source code of all Microservices
     8000    emart-service
     8001    emart-buyer-service
     8002    emart-seller-service
-    8003    emart-eureka-server
-    8004    emart-zuul-service
+
+    9001    emart-eureka-server
+    9002    emart-zuul-service
 
 Use Post Man tool to test each End Point of all Microservices
 ```
