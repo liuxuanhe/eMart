@@ -1,6 +1,0 @@
-com\ibm\emart\zuul\filter\TokenFilter.class
-com\ibm\emart\zuul\feign\AuthFeignFallback.class
-com\ibm\emart\zuul\ZuulServerApplication.class
-com\ibm\emart\zuul\constants\EMartConstants.class
-com\ibm\emart\zuul\feign\AuthFeign.class
-com\ibm\emart\zuul\dto\UserInfo.class
