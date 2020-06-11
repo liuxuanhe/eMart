@@ -12,3 +12,7 @@ spring:
     database: MYSQL
     show-sql: true
     open-in-view: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka

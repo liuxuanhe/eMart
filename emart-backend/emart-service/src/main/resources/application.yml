@@ -18,3 +18,8 @@ encrypt:
   base64Secret: QpptmwrmemricotwqrgjuyyN2I0ZjY=
   name: restapiuser
   expiresSecond: 172800
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka
