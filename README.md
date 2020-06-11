@@ -2,6 +2,13 @@
 
 ## FrontEnd ：Angular 9；
 ## Mid Tier：SpringCloud；
+- Eureka
+- Zuul
+- Feign
+- OAuth2
+- Security
+- Config
+
 
 ## Environment
 - node-10
@@ -23,6 +30,9 @@ Mid Tier Source code of all Microservices
     8001    emart-buyer-service
     8002    emart-seller-service
 
+    9001    emart-eureka-server
+    9002    emart-zuul-service
+
 Use Post Man tool to test each End Point of all Microservices
 ```
 
@@ -36,6 +46,10 @@ cd emart-frontend
 npm install
 npm start
 ```
+
+Jenkinsfile:
+
+    emart-backend/Jenkinsfile
 
 URL :
 ```
